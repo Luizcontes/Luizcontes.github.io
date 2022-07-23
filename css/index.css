@@ -1,3 +1,6 @@
+@import "lightbox.css";
+@import "side-menu.css";
+
 * {
     padding: 0;
     margin: 0;
@@ -6,242 +9,109 @@
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(rgba(150, 150, 150, 0.6) 0%, rgba(0, 0, 0, 0.7) 100%), url('../img/background.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Open Sans', sans-serif;    
+    font-family: 'Open Sans', sans-serif;
 }
 
-.inner-cabecalho, main, footer {
-    padding: 0 20px;
-    }
-
-.cabecalho {
-    background-color: rgb(231, 233, 203);
-    width: 100vw;
+.menu-btn {
     position: fixed;
-    top: 0;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-
-.inner-cabecalho {
-    width: 940px;
-    margin: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#logo {
-    height: 30px;
-}
-
-.cabecalho ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-}
-
-.cabecalho li {
-    margin-left: 15px;
-}
-
-.anchor {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    text-decoration: none;
-}
-
-.anchor p {
-    margin: auto;
-    padding-left: 3px;
-    color: rgb(80, 74, 74);
-}
-
-a #git {
-    fill: rgb(80, 74, 74);
-    transition: 300ms;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
-a:hover #git {
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    top: 15px;
     cursor: pointer;
-    fill: #333;
-    transform: scale(1.2);
-    box-shadow: 0 0 15px rgb(80, 74, 74);
+    transition: all .5s ease-in-out;
+    z-index: 2;
 }
 
-a #linkedin {
-    fill: rgb(80, 74, 74);
-    transition: 300ms;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+.menu-btn_burger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out
 }
 
-a:hover #linkedin {
-    cursor: pointer;
-    fill: #0072b1;
-    transform: scale(1.2);
-    box-shadow: 0 0 15px rgb(80, 74, 74);
-    border-radius: 50%;
+.menu-btn_burger::before,
+.menu-btn_burger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
 }
 
-a #whatsapp {
-    fill: rgb(80, 74, 74);
-    transition: 400ms;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+.menu-btn_burger::before {
+    transform: translateY(-16px);
 }
 
-a:hover #whatsapp {
-    cursor: pointer;
-    fill: #25D366;
-    transform: scale(1.2);
-    box-shadow: 0 0 15px rgb(80, 74, 74);
-    border-radius: 50%;
+.menu-btn_burger::after {
+    transform: translateY(16px);
 }
 
-main {
+/* ANIMATION */
+
+.menu-btn.open .menu-btn_burger {
+    background: transparent;
+}
+
+.menu-btn.open .menu-btn_burger::before {
+    transform: rotate(45deg)
+}
+
+.menu-btn.open .menu-btn_burger::after {
+    transform: rotate(-45deg)
+}
+
+.projects {
     width: 940px;
-    margin: 130px auto;
+    height: 100%;
+    margin: 25px auto;
+    margin-bottom: 0;
 }
 
-#apresentacao {
-    display: flex;
-    flex-direction: row;
-    justify-content: baseline;
-    background: rgba(116, 125, 129, 0.8);
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgb(145, 197, 240);
-
+.title,
+.preview {
+    margin: 0 auto;
 }
 
-#foto {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
-
-.name {
-    margin-left: 40px;
-}
-
-#nome {
-    font-size: 4em;
-    text-indent: -4px;
-}
-
-#titulo {
-    font-size: 1.5em;
-    line-height: 0.4;
-}
-
-#descricao {
-    font-family: 'Inconsolata', monospace;
-    font-weight: 900;
-    text-align: justify;
-    margin-top: 30px;
-    padding: 25px;
-    background-color: #0072b1;
+.title {
+    border: #888 solid 1px;
+    background: #888;
     border-radius: 10px;
-    font-weight: bold;
-    line-height: 1.4;
+    padding: 15px;
+    width: 70%;
+    text-align: center;
 }
 
-.texto {
-    margin: 50px 0;
-}
-
-footer {
-    background-color: #333;
-}
-
-#rodape {
-    margin: auto;
-    padding: 30px 20px;
-    width: 940px;
-}
-
-#rodape div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.img-form {
-    width: 48%;
-}
-
-.img-form img {
+.preview {
+    height: auto;
     width: 100%;
-    padding: 10px;
+    margin-top: 50px;
 }
 
-form {
-    width: 100%;
-}
-
-form h1 {
-    padding-bottom: 5px;
-}
-
-#mensagem {
+.preview img {
     display: block;
-    padding: 5px;
-    width: 100%;
-    resize: none;
-    font-size: 1.2em;
-    color: black
+    margin: 0 auto;
+    height: 75vh;
+    min-height: 35vh;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 2px #888;
+    transition: 1s;
 }
 
-#email-field {
-    margin: 30px 0;
-
-}
-
-#email, #button {
-    color: black;
-    padding: 5px;
-    font-size: 1.2em;
-}
-
-#email {
-    flex-grow: 4;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border: rgba(116, 125, 129, 0.8);
-}
-
-#button {
-    flex-grow: 1;
-    border: rgba(116, 125, 129, 0.8);
-    border-left: none;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: rgba(116, 125, 129, 0.6);
-}
-
-#button:hover {
+.preview img:hover {
     cursor: pointer;
-    background-color: rgba(116, 125, 129, 0.8);
-}
-
-#button:active {
-    cursor: pointer;
-    color: white;
-    background-color: rgba(116, 125, 129, 1);
-    transform: scale(1.03);
+    transform: scale(1.05);
+    box-shadow: 7px 7px 3px #888;
 }
