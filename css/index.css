@@ -10,7 +10,11 @@
 
 body {
     height: 100%;
-    background: linear-gradient(rgba(150, 150, 150, 0.6) 0%, rgba(0, 0, 0, 0.7) 100%), url('../img/background.jpg');
+    width: 950px;
+    margin: 0 auto;
+    /* background: linear-gradient(rgba(150, 150, 150, 0.6) 0%, rgba(0, 0, 0, 0.7) 100%), url('../img/background.jpg'); */
+    background: rgb(116, 195, 248);
+    background-image: linear-gradient(to right,  rgb(58, 156, 221), rgb(131, 169, 194), rgb(62, 145, 201));
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -74,10 +78,45 @@ body {
 }
 
 .projects {
-    width: 940px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 28px auto;
+}
+
+.projects svg {
+    box-shadow: 5px 5px 0 #888;
+    border-radius: 50%;
+    background: #555;
+}
+
+.projects svg:hover {
+    cursor: pointer;
+}
+
+.projects svg:active {
+    box-shadow: none;
+    transform: scale(0.95);
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
     height: 100%;
-    margin: 25px auto;
     margin-bottom: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px #888;
+    
+}
+
+.principal:hover {
+    cursor: pointer;
+    box-shadow: 7px 7px 3px #888;
+    transform: scale(1.02);
+    transition: 1s ease-in-out;
 }
 
 .title,
@@ -86,32 +125,26 @@ body {
 }
 
 .title {
-    border: #888 solid 1px;
     background: #888;
-    border-radius: 10px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     padding: 15px;
-    width: 70%;
     text-align: center;
 }
 
 .preview {
     height: auto;
     width: 100%;
-    margin-top: 50px;
 }
 
 .preview img {
     display: block;
     margin: 0 auto;
-    height: 75vh;
+    width: 100%;
+    min-width: 20vw;
+    height: 85vh;
     min-height: 35vh;
-    border-radius: 15px;
-    box-shadow: 0 0 5px 2px #888;
-    transition: 1s;
-}
-
-.preview img:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    box-shadow: 7px 7px 3px #888;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
