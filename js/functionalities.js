@@ -1,15 +1,3 @@
-const favicons = ['img/favicon0.ico', 'img/favicon1.ico', 'img/favicon2.ico', 'img/favicon3.ico'];
-const favicon = document.querySelector('[rel=icon]');
-let counter = 0;
-
-function icon() {
-    favicon.href = favicons[counter];
-    counter = (counter + 1) % 4;
-}
-
-setInterval(icon, 300);
-
-
 const lightbox = document.getElementById('lightbox');
 const logo = document.getElementById('logo')
 logo.addEventListener('click', () => turnLightbox())
@@ -20,6 +8,8 @@ const turnLightbox = () => {
 }
 
 const body = document.getElementById('body');
+const card = document.getElementById('card')
+
 body.addEventListener('click', (e) => {
     // console.log(e.target)
     if (e.target.matches('#close') || e.target.matches('#lightbox')) {
@@ -30,7 +20,14 @@ body.addEventListener('click', (e) => {
             lightbox.classList.toggle('lightbox')
         }, 1000);
     }
+    if (e.target.matches('#close2')) {
+        card.classList.add('hidden')
+    }
 });
+
+function cardClick() {
+    card.classList.remove('hidden')
+}
 
 const sideMenu = document.getElementById('side-menu')
 const menuBtn = document.querySelector('.menu-btn')

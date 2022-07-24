@@ -49,6 +49,7 @@
 ul {
     display: flex;
     flex-direction: row;
+    margin-top: 20px;
     padding: 5px;
     justify-content: space-between;
     align-items: center;
@@ -146,7 +147,7 @@ ul {
 
 form {
     width: 100%;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 form h1 {
@@ -207,4 +208,34 @@ form h1 {
     color: white;
     background-color: rgba(116, 125, 129, 1);
     transform: scale(1.03);
+}
+
+.response {
+    width: 100%;
+    height: 70px;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+    line-height: 70px;
+    margin-top: 40px;
+    border-radius: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.verde {
+    background-color: #67fd9e;
+    animation: fadeinout 4s linear forwards;
+}
+
+.vermelho {
+    background-color: rgb(243, 135, 135);
+    animation: fadeinout 5s linear forwards;
+}
+
+@keyframes fadeinout {
+    0%, 100% { opacity: 0;}
+    30% { opacity: 1;}
 }

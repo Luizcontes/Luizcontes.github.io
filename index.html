@@ -31,15 +31,23 @@
                 </div>
             </div>
             <div id="descricao">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus saepe, fugit dolor ut
-                molestiae tempora culpa possimus rerum eos nobis perferendis distinctio impedit laborum
-                repudiandae
-                sint hic nemo nam facere.
-                Fuga atque modi earum distinctio eius at iusto! Dolore neque nobis nesciunt doloremque
-                consectetur
-                ipsum eveniet, illum repellat ipsa quia quod deleniti soluta laudantium asperiores corrupti
-                vitae
-                nostrum modi quas.
+                After participating in a bootcamp which introduced me to information technology I got interested in a
+                JavaScript Fullstack developer role. Since the beginning of 2022 I`ve been mainly studying JavaScript as
+                my core tecnology, and now I am mastering in deepth some libraries wich will help me to improve my
+                skills as a fullstack developer such as:
+                -NodeJs
+                -React
+                -Express
+                -Axios
+                -PWT
+                -Joi
+                -Eslint
+
+                Some of other technologies I am focused on:
+                -MongoDB
+                -Kubernetes
+                -Docker
+                -AWS
             </div>
         </div>
     </div>
@@ -91,11 +99,16 @@
                 <textarea id="mensagem" rows="15" placeholder="Leave your message"></textarea>
                 <div id="email-field">
                     <input id="email" type="email" placeholder="Your best e-mail">
-                    <input id="button" type="button" value="Send">
+                    <input id="button" type="button" value="Send" onclick="sendInfo()">
                 </div>
             </form>
+            <div id="response" class="response hidden">
+                
+            </div>
         </div>
     </div>
+
+    <!-- <button id="button" onclick="repos()">API</button> -->
 
     <div class="projects">
         <svg version="1.1" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 1000 1000"
@@ -110,15 +123,26 @@
             </g>
         </svg>
 
-        <div class="principal">
+        <div class="principal" onclick="cardClick()">
 
-            <div class="title">
+            <div id="title">
                 Title
             </div>
 
+            <div id="card" class="hidden">
+                <div id="close2"></div>
+                <div class="buttons">
+                    <a id="webpage">
+                        <div class="button">Web Page</div>
+                    </a>
+                    <a id="repository">
+                        <div class="button">Repository</div>
+                    </a>
+                </div>
+            </div>
+
             <div class="preview">
-                <img
-                    src="https://user-images.githubusercontent.com/70711596/177019901-8afbed39-44fd-45c3-87ef-fb92bba573aa.gif">
+                <img id="preview" src="">
             </div>
 
         </div>
@@ -138,6 +162,8 @@
     </div>
 
 </body>
-<script src="js/index.js"></script>
+<script src="js/functionalities.js"></script>
+<script src="js/repositories.js"></script>
+<script src="js/contact.js"></script>
 
 </html>

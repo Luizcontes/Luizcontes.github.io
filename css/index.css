@@ -1,5 +1,6 @@
 @import "lightbox.css";
 @import "side-menu.css";
+@import "card.css";
 
 * {
     padding: 0;
@@ -116,16 +117,19 @@ body {
     cursor: pointer;
     box-shadow: 7px 7px 3px #888;
     transform: scale(1.02);
-    transition: 1s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
-.title,
+#title,
 .preview {
     margin: 0 auto;
 }
 
-.title {
+#title {
     background: #888;
+    color: #555;
+    font-weight: bold;
+    font-size: 2em;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
